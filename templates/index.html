@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Analysis App</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background: #f4f4f4; }
+        textarea { width: 60%; height: 100px; padding: 10px; }
+        button { padding: 10px 20px; margin-top: 20px; }
+        .result { margin-top: 20px; font-size: 24px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Sentiment Analysis</h1>
+    <form method="POST" action="/predict">
+        <textarea name="text" placeholder="Enter your sentence here..." required></textarea><br>
+        <button type="submit">Analyze Sentiment</button>
+    </form>
+    {% if prediction %}
+        <div class="result">
+            Sentiment: {{ prediction }}
+        </div>
+    {% endif %}
+</body>
+</html>
